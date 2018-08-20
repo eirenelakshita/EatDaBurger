@@ -1,36 +1,37 @@
-<img src="../public/assets/image/elle.jpg" alt="burgers" class="img-thumbnail">
-
 <div class="row">
-  <h2>Burgers not devoured yet!</h2>
+  <div class="col col-lg-1"></div>
+  <div class="col col-lg-4">
+    <ul>
+      {{#each burgers}} {{#unless devoured}} {{> burgers/burger-block devoured=false}} {{/unless}} {{/each}}
+    </ul>
+  </div>
 
-  <ul>
-    {{#each burgers}} {{#unless devoured}} {{> burgers/burger-block devoured=false}} {{/unless}} {{/each}}
-  </ul>
+  <div class="col col-lg-2"></div>
+
+  <div class="col col-lg-4">
+    <ul>
+      {{#each burgers}} {{#if devoured}} {{> burgers/burger-block devoured=true}} {{/if}} {{/each}}
+    </ul>
+
+  </div>
+
+  <div class="col col-lg-1"></div>
 </div>
 
-<div class="row">
-  <h2>Burgers already devoured!</h2>
-
-  <ul>
-    {{#each burgers}} {{#if devoured}} {{> burgers/burger-block devoured=true}} {{/if}} {{/each}}
-  </ul>
-</div>
 
 <div class="row">
-  <h2>Eat Da Burger!</h2>
-  <form id="create-burger" class="create-form">
+  <div class="col col-lg-4"></div>
+  <div class="col col-lg-4 text-center">
+    <img src="/assets/image/burger.jpg" alt="burgers" class="img-thumbnail" style="width:40%; height:auto">
 
-    <div class="form-group">
-      <label for="ca">Burger Name:</label>
-      <input type="text" id="ca" name="burger_name">
+    <h2 id="inputTitle">Eat-Da-Burger!</h2>
+    <form id="create-burger" class="create-form">
+
+      <div class="form-group">
+        <input type="text" style="width:70%; height:100px;" id="ca" name="burger_name">
+        <br>
+        <button id="submit-burger" type="submit" class="btn btn-info">Submit</button>
+    </form>
     </div>
-</div>
-{{!--
-<div class="form-group">
-  <label for="devoured">Sleepy?</label><br>
-  <input type="radio" name="sleepy" value="1" checked> Sleepy!<br>
-  <input type="radio" name="sleepy" value="0"> Awake
-</div> --}}
-
-<button id="submit-burger" type="submit">Submit</button>
-</form>
+    <div class="col col-lg-4"></div>
+  </div>

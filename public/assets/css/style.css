@@ -5,7 +5,7 @@ background-color: #FAC55A;
 li {
     padding: 5px;
     margin: 5px;
-    background: #faebd7;
+    background: whitesmoke;
   }
   
   .label {
@@ -22,3 +22,6 @@ li {
     margin-bottom: 5px;
   }
   
+  #inputTitle {
+      color: red
+  }
